@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+    </style>
+  </head>
+  <body>
+    <h3>Google Maps Temperatures Sensor</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+// My part
+
+// Google part
+// Initialize and add the map
+// Permet de désactiver le fait que le retour du getJSON soit mise tout en haut du fichier avant x=null.
+
+$.ajaxSetup({
+   async: false
+ });
+
+function initMap() { 
+
+    var x=null;
+    var y=null;
+    
+    $.getJSON("https://api.thingspeak.com/channels/1042873/fields/3/last.json?api_key=XRXQD9GU8OXB6W63", function(result){    	
+     var m = result;
+     x=Number(m.field3); 
+
+    })
+
+    $.getJSON("https://api.thingspeak.com/channels/1042873/fields/4/last.json?api_key=XRXQD9GU8OXB6W63", function(result){    	
+     var m = result;
+     y=Number(m.field4); 
+
+    })
+     
+
+  // The location of the device
+  var coord = {lat: x, lng: y};
+  // The map, centered on the device
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 10, center: coord});
+  // The marker, positioned on the device
+  var marker = new google.maps.Marker({position: coord, map: map});
+}
+    </script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+    <script async defer
+     src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+  </body>
+</html>
