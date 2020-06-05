@@ -11,7 +11,7 @@ A noter que j'ai retiré ma clé d'API Google du code pour éviter quelle soit u
 
 ## Récupération du code GoogleMaps
 
-Avant pouvoir commencer à utiliser la carte Google Maps, il faut se connecter au [site](https://console.developers.google.com/apis/) pour avoir une clé d'API Google. À noter que ce service est payant en tant normal mais en tant que nouvel utilisateur, on dispose d'un crédit de 400$ gratuitement ce qui permet de faire déjà un bon nombre de manipulations.
+Avant pouvoir commencer à utiliser la carte Google Maps, il faut se connecter au [site](https://console.developers.google.com/apis/) pour avoir une clé d'API Google. À noter que ce service est payant en temps normal mais en tant que nouvel utilisateur, on dispose d'un crédit de 400$ gratuitement ce qui permet de faire déjà un bon nombre de manipulations.
 
 Pour obtenir la clé d'API on se rend dans un premier temps dans la catégorie "Identifiants":
 
@@ -22,7 +22,7 @@ Ensuite, dans le menu supérieur, on choisit "Créer des identifiants" puis "Cl�
 
 ![](https://i.imgur.com/NYisAPH.png)
 
-On obtient la clé d'API qui est automatiquement sauvegardée sur l'interface de votre compte. Vous pouvez aussi mettre des restrictions sur celle-ci mais je ne m'attarderai sur ce point.
+On obtient la clé d'API qui est automatiquement sauvegardée sur l'interface de votre compte. Vous pouvez aussi mettre des restrictions sur celle-ci mais je ne m'attarderai pas sur ce point.
 
 ![](https://i.imgur.com/Ctl1p50.png)
 
@@ -57,13 +57,13 @@ On obtient une carte avec un pointeur vers la destination souhaitée, et elle es
 
 Dans l'exemple précédent, les coordonnées GPS sont fixes et uniquement modifiables directement dans le code. Ce que l'on souhaite faire maintenant, c'est récupérer les données sur ThingSpeak et les afficher.
 
-Pour récupérer les données de ThingSpeak, je vais utiliser le framework Ajax qui permet de faire des requêtes sur des sites pour récupérer les données.
+Pour récupérer les données de ThingSpeak, je vais utiliser le framework Ajax qui permet de faire des requêtes sur des sites pour récupérer des données.
 
 J'ai donc adapté le code à cette situation
 
 ![](https://i.imgur.com/70s1R9l.png)
 
-J'ai dans un premier rajouter Ajax au site avec la commande "<script src"https://ajax.googleapis.com...."</script>".
+J'ai dans un premier temps rajouter Ajax au site avec la commande "<script src"https://ajax.googleapis.com...."</script>".
 
 Il faut ensuite rajouter la commande suivante qui permet de stocker les résultats de retour de la requête dans des variables. En effet, sans cette commande, je me suis aperçu que les variables dans lesquelles étaient stockées les données restaient NULL.
 
@@ -92,7 +92,7 @@ Pour finir la récupération, on repète la même opération en récupérant le 
 Il ne reste plus qu'à initialiser la map.
 Dans la variable coord, on stocke la latitude et la longitude ( x et y). Enfin j'ai choisi un zoom de base égale à 10 pour avoir une bonne visualisation.
 
-La fin code ne diffère pas avec celui vu dans la première partie.
+La fin du code ne diffère pas avec celui vu dans la première partie.
 
 Une fois que tout est reglé correctement, on obtient le résultat suivant:
 
