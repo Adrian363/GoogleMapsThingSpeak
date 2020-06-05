@@ -6,8 +6,8 @@ Sur le channel, on peut effectivement créer des maps avec MathLab qui permetten
 Pour mettre en place une maps interactive, j'ai utilisé le code de Google Maps disponible sur Google Developer et j'ai adpaté ce code pour récupérer les données de ThingSpeak grâce à l'API de lecture.
 
 
-L'intégralité du code est disponible sur GitHub et je vais uniquement expliqué les parties importantes de la configuration dans ce rapport.
-A noter que j'ai retiré ma clé d'API Google pour éviter quelle soit utilisée par une personne tierce.
+L'intégralité du code est disponible sur GitHub et je vais uniquement expliquer les parties importantes de la configuration dans ce rapport.
+A noter que j'ai retiré ma clé d'API Google du code pour éviter quelle soit utilisée par une personne tierce.
 
 ## Récupération du code GoogleMaps
 
